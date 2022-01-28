@@ -3,12 +3,12 @@
 import numpy as np  # For data manipulation
 import matplotlib.pyplot as ppl # For data visualization
 from scipy.io.wavfile import read, write    # To interpret audio data
-import sounddevice as sd
+import sounddevice as sd    # Used to record 
 
 Fs = 44000 # Sample rate
 sx = 1  # Length of recording
 
-sample = sd.rec(int(sx * Fs), samplerate = Fs, channels = 2)
+sample = sd.rec(int(sx * Fs), samplerate = Fs, channels = 2) # Call python-sounddevice's record function
 sd.wait()   # Wait until recording is finished
 write('audio/sample.wav', Fs, sample) # Save file as .wav
 
