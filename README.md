@@ -1,6 +1,6 @@
-		STRNG --- Sonic Transmission Random Number Generator
+# STRNG --- Sonic Transmission Random Number Generator
 
-#Introduction
+## Introduction
 
 STRNG (IPA: /strɔŋ/) is a proof-of-concept/self-imposed challenge which uses short, dynamically recorded soundbites to generate strings of random numbers. The idea is to use the unpredictability of real-world noise to add chaos into number generation.
 
