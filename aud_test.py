@@ -3,9 +3,9 @@
 import numpy as np  # For data manipulation
 import matplotlib.pyplot as ppl # For data visualization
 from scipy.io.wavfile import read, write    # To interpret audio data
-import sounddevice as sd    # Used to record 
+import sounddevice as sd    # Used to record
 
-Fs = 44000 # Sample rate
+Fs = 6600 # Sample rate
 sx = 1  # Length of recording
 
 sample = sd.rec(int(sx * Fs), samplerate = Fs, channels = 2) # Call python-sounddevice's record function
@@ -18,8 +18,12 @@ data = data[:,0]
 
 cat = ''
 
+data = data[ (data >= 0.0001) ]
+
 for i in range(len(data)):
-    if data[i] < 0: data[i] = -data[i]
+    print(data[i])
     cat = cat + str(data[i])
 
+cat = cat.replace('.', '')
+cat = int(cat)
 print(cat)
